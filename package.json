@@ -8,9 +8,23 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+      // Запускает линтер Next.js для проверки правил ESLint
+    "lint": "next lint",
+  // Автоматически форматирует все файлы с помощью Prettier
+  "prettier": "npx prettier --write **/*.{ts,tsx,json,scss}",
+  // Проверяет TypeScript-файлы на соответствие правилам ESLint
+  "lint:ts": "eslint \"./src/**/*.{ts,tsx}\"",
+  // Исправляет автоматически исправляемые ошибки с помощью ESLint.
+  "lint:ts:fix": "eslint \"./src/**/*.{ts,tsx}\" --fix"
   },
-  "dependencies": {
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/parser": "^8.53.1",
     "eslint": "^9.39.2",
-    "prettier": "^3.8.0"
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.0.0",
+    "prettier": "^3.8.1"
   }
 }
